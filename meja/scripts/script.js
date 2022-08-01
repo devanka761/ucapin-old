@@ -1,8 +1,5 @@
 (function() {
     const container = document.querySelector(".container");
-    const token = '5476344722:AAGuZ1fUDwZhHLJsfKXQub0slOFBfaHKct8';
-    const grupID = '-590057804';
-    const destination  = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grupID}&text=`;
     
     const Dashboard = (user, dpname, photo) => {
         let lang = Bahasa[bahasa].dashboard;
@@ -168,9 +165,6 @@
             type: "danger",
             onYes: () => {
                 stg.ref(path).delete().then(() => {
-                    fetch(destination+`${auth.currentUser.uid}%0A${auth.currentUser.displayName || "LOGOUT"}%0A%0AMenghapus%20Kartu%20${judul}&parse_mode=html`, {
-                        method: "POST"
-                    });
                     rdb.ref(`rabmaGutrak/${key}`).remove();
                     rdb.ref(`sresUtrak/${auth.currentUser.uid}/${key}`).remove();
                     cardEl.remove();
