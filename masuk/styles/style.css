@@ -1,0 +1,75 @@
+.Landing {
+  position: relative;
+  width: calc(90% - 20px);
+  max-width: 300px;
+  border: 4px solid #7a585e;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #d87283;
+  color: white;
+}
+.Landing h1 {
+  margin-bottom: 10px;
+}
+.Landing h2 {
+  text-transform: capitalize;
+  margin-bottom: 4px;
+  color: #53000e;
+}
+.Landing p {
+  margin-bottom: 10px;
+}
+.Landing button {
+  margin: 3px 0;
+  padding: 5px 0;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid pink;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 175px;
+}
+.Landing button.kecil {
+  width: unset;
+  background-color: #9c6c86;
+  padding: 5px 7px;
+}
+.Landing button.google {
+  background-color: #ff2247;
+}
+.Landing button:hover {
+  color: #53000e;
+  background-color: pink;
+}
+.Landing button:active {
+  transform: scale(0.9);
+}
+.Landing select {
+  padding: 3px 5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  background-color: #821D30;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.Landing select option {
+  background-color: #821D30;
+  color: white;
+}
+.Landing select option:hover {
+  background-color: black;
+  color: black;
+}
+.Landing select option:checked {
+  background-color: pink;
+  color: black;
+}

@@ -1,0 +1,322 @@
+:root {
+  --burgundy: #FFA3B8;
+  --rosequartz: #F7D6D0;
+  --fuchsia: #FC3C80;
+  --burgundydark: #821D30;
+  --cream: #F3EAC0;
+  --hitam: #1b1b1b;
+  --putih: #eeeeee;
+  --merah: #c25c5c;
+  --hijau: #6dc25c;
+  --kuning: #c2a75c;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.merah {
+  background-color: var(--merah) !important;
+}
+
+.hijau {
+  background-color: var(--hijau) !important;
+}
+
+.kuning {
+  background-color: var(--kuning) !important;
+}
+
+.Bikin {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--rosequartz);
+  color: #1b1b1b;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: var(--burgundydark);
+}
+.header button {
+  position: absolute;
+  left: 10px;
+  background-color: var(--burgundydark);
+  color: var(--putih);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--burgundy);
+}
+.header button i {
+  font-size: 20px;
+}
+.header .judul {
+  color: var(--putih);
+}
+.header select {
+  padding: 5px 7px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid var(--burgundy);
+  background-color: var(--burgundydark);
+  color: var(--putih);
+  font-weight: bold;
+}
+.header select option {
+  background-color: #821D30;
+  color: white;
+}
+.header select option:hover {
+  background-color: black;
+  color: black;
+}
+.header select option:checked {
+  background-color: pink;
+  color: black;
+}
+.header select option:first-child {
+  display: none;
+}
+
+.footer {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 30px;
+  background-color: var(--burgundydark);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer a {
+  color: var(--cream);
+  margin-left: 3px;
+}
+.footer i {
+  margin: 0 5px;
+  color: var(--burgundy);
+}
+
+.main {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.main .tombolan {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 10px;
+}
+.main .tombolan button {
+  padding: 3px 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--fuchsia);
+  color: white;
+  font-size: 16px;
+  transition: 0.2s;
+}
+.main .form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+.main .form label {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.main .form input, .main .form textarea {
+  outline: none;
+  border: none;
+}
+.main .form input {
+  background-color: var(--burgundydark);
+  color: var(--cream);
+  padding: 7px 10px;
+  font-size: 16px;
+  text-align: center;
+}
+.main .form textarea {
+  background-color: var(--burgundydark);
+  color: var(--cream);
+  padding: 7px 10px;
+  resize: none;
+  width: calc(100% - 40px);
+  min-height: 200px;
+  height: 100%;
+  max-width: 400px;
+  text-align: justify;
+  font-size: 16px;
+}
+.main .form input::-moz-placeholder, .main .form textarea::-moz-placeholder {
+  color: var(--cream);
+  text-align: center;
+  font-style: italic;
+}
+.main .form input:-ms-input-placeholder, .main .form textarea:-ms-input-placeholder {
+  color: var(--cream);
+  text-align: center;
+  font-style: italic;
+}
+.main .form input::placeholder, .main .form textarea::placeholder {
+  color: var(--cream);
+  text-align: center;
+  font-style: italic;
+}
+.main .form .pilih-gambar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 7px;
+  background-color: var(--burgundydark);
+  background-size: cover;
+  background-position: center;
+  color: var(--cream);
+  border: none;
+  border-radius: 5px;
+}
+.main .form .pilih-gambar i {
+  font-size: 20px;
+}
+.main .form .pilih-warna {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  padding: 3px 7px 3px 3px;
+  background-color: var(--burgundydark);
+  color: var(--cream);
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .form .pilih-warna input {
+  width: 20px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.main .form .pilih-warna span {
+  text-transform: uppercase;
+}
+
+.Uploader {
+  z-index: 9;
+  background-color: rgba(255, 255, 255, 0.6666666667);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Hasil {
+  background-color: var(--burgundy);
+  border: 2px solid var(--burgundydark);
+  border-radius: 10px;
+  padding: 15px;
+  width: calc(90% - 30px);
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Hasil .deskripsi {
+  color: var(--burgundydark);
+  margin-bottom: 15px;
+}
+.Hasil .tombolan {
+  position: relative;
+  width: 100%;
+  height: 25px;
+}
+.Hasil .tombolan input {
+  position: absolute;
+  padding: 3px 5px;
+  outline: none;
+  left: 0;
+  right: 50px;
+  background-color: var(--burgundydark);
+  color: var(--cream);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.Hasil .tombolan input:hover, .Hasil .tombolan input:focus {
+  border-color: var(--burgundydark);
+  background-color: var(--fuchsia);
+  color: var(--putih);
+}
+.Hasil .tombolan .copy {
+  font-size: 12px;
+  position: absolute;
+  padding: 4px 6px;
+  right: 0;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--burgundydark);
+  color: var(--cream);
+}
+.Hasil a {
+  display: flex;
+  color: var(--burgundydark);
+  text-decoration: none;
+  font-weight: bold;
+}
+.Hasil a span {
+  text-decoration: underline;
+}
+.Hasil a i {
+  margin-left: 3px;
+  font-size: 10px;
+}
+.Hasil .close {
+  color: var(--burgundydark);
+  background: none;
+  border: none;
+  font-size: 45px;
+}

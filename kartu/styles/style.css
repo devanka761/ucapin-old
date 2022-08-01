@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+@font-face {
+  font-family: "Darlington";
+  src: url(../../fonts/Darlington.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.container {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suggest {
+  background-color: rgba(0, 0, 0, 0.7333333333);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arvo";
+  font-size: 14px;
+}
+.suggest a {
+  color: white;
+}
+
+.kartu {
+  position: relative;
+  margin: 20px 0;
+  width: 300px;
+  height: 400px;
+  background: white;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: 1s;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5019607843);
+}
+.kartu .sampul {
+  position: relative;
+  width: calc(100% - 10px);
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.533);
+  box-shadow: inset -1px -1px 10px rgba(85, 85, 85, 0.5333333333), inset 1px 1px 10px rgba(85, 85, 85, 0.5333333333);
+  box-sizing: border-box;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-size: cover;
+  background-position: center;
+}
+.kartu .sampul span {
+  font-size: 12px;
+  color: #eeeeee;
+  text-shadow: 1px 1px 3px #000000, -1px -1px 3px #000000;
+  text-decoration: underline;
+  font-family: "Arvo";
+  position: absolute;
+  top: 5px;
+  right: 7px;
+}
+.kartu .tulisan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.kartu .tulisan h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.kartu .tulisan p {
+  font-family: "Arvo";
+  height: 275px;
+  overflow-y: auto;
+}
+.kartu .tulisan p::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.kartu .tulisan p::-webkit-scrollbar-thumb {
+  background-color: #ff6347;
+}
+.kartu .tulisan p::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+.kartu .tulisan span {
+  font-family: "Darlington";
+  font-size: 42px;
+  font-weight: bold;
+  color: #5a4c4c;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  text-transform: capitalize;
+}
+
+.kartu:hover {
+  z-index: 1000;
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+.kartu:hover .sampul {
+  transform: rotateY(-135deg);
+}
+
+.kesalahan {
+  display: none;
+}
+
+@media (max-width: 240px) {
+  .kartu {
+    display: none;
+  }
+  .kesalahan {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 400px) {
+  .kartu {
+    width: 200px;
+    height: 300px;
+  }
+  .kartu .tulisan {
+    padding: 10px;
+  }
+  .kartu .tulisan h3 {
+    font-size: 16px;
+  }
+  .kartu .tulisan p {
+    font-size: 12px;
+    height: 200px;
+  }
+  .kartu .tulisan span {
+    font-size: 24px;
+  }
+}

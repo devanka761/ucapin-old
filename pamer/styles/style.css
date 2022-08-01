@@ -1,0 +1,346 @@
+:root {
+  --burgundy: #FFA3B8;
+  --rosequartz: #F7D6D0;
+  --fuchsia: #FC3C80;
+  --burgundydark: #821D30;
+  --cream: #F3EAC0;
+  --hitam: #1b1b1b;
+  --putih: #eeeeee;
+  --merah: #c25c5c;
+  --hijau: #6dc25c;
+  --kuning: #c2a75c;
+}
+
+.Pamer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--rosequartz);
+  color: #1b1b1b;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: var(--burgundydark);
+}
+.header button {
+  background-color: var(--burgundydark);
+  color: var(--putih);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--burgundy);
+}
+.header button i {
+  font-size: 20px;
+}
+.header .judul {
+  color: var(--putih);
+}
+.header select {
+  padding: 5px 7px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid var(--burgundy);
+  background-color: var(--burgundydark);
+  color: var(--putih);
+  font-weight: bold;
+}
+.header select option {
+  background-color: #821D30;
+  color: white;
+}
+.header select option:hover {
+  background-color: black;
+  color: black;
+}
+.header select option:checked {
+  background-color: pink;
+  color: black;
+}
+.header select option:first-child {
+  display: none;
+}
+
+.main {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.main .kartu {
+  background-color: var(--cream);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 40px);
+  max-width: 500px;
+  border: 2px solid var(--burgundydark);
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin: 5px 0;
+}
+.main .kartu .tentang {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  min-height: 50px;
+}
+.main .kartu .tentang .metadata {
+  width: calc(100% - 76px);
+  min-width: 100px;
+  background-image: url(../../images/default.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--fuchsia);
+}
+.main .kartu .tentang .metadata h3 {
+  color: white;
+  text-shadow: 1px 1px 3px black, -1px -1px 3px black;
+}
+.main .kartu .tentang .metadata i {
+  color: white;
+  text-shadow: 1px 1px 3px black, -1px -1px 3px black;
+}
+.main .kartu .tentang .tombolan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 64px;
+}
+.main .kartu .tentang .tombolan button {
+  padding: 5px 7px;
+  background-color: var(--fuchsia);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.main .kartu .tentang .tombolan button.hapus {
+  margin-bottom: 2px;
+}
+.main .kartu .tentang .tombolan button:hover {
+  color: #53000e;
+  background-color: pink;
+}
+.main .kartu .tentang .tombolan button:active {
+  transform: scale(0.9);
+}
+.main .kartu .status {
+  width: 100%;
+  display: flex;
+}
+.main .kartu .status button {
+  padding: 5px 0;
+  width: 50%;
+  background-color: #9c6c86;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.main .kartu .status button.suka {
+  margin-right: 5px;
+}
+.main .kartu .status button:hover {
+  color: #53000e;
+  background-color: pink;
+}
+.main .kartu .status button:active {
+  transform: scale(0.9);
+}
+
+.bikin-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 3px 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: var(--fuchsia);
+  color: var(--cream);
+}
+
+.Komentar {
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.Komentar .komen-box {
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  border: 2px solid var(--burgundydark);
+  position: relative;
+  height: calc(100vh - 79px);
+  width: calc(100% - 44px);
+  max-width: 500px;
+  padding: 15px;
+}
+.Komentar .komen-box .komen-atas {
+  position: absolute;
+  background-color: var(--burgundydark);
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.Komentar .komen-box .komen-atas button {
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  left: 10px;
+  padding: 0 5px;
+  border: none;
+  cursor: pointer;
+}
+.Komentar .komen-box .komen-atas button i {
+  font-size: 20px;
+}
+.Komentar .komen-box .komen-bawah {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--burgundydark);
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+}
+.Komentar .komen-box .komen-bawah button {
+  width: 26px;
+  border: none;
+  background-color: transparent;
+  color: var(--cream);
+  padding: 2px 0;
+  cursor: pointer;
+}
+.Komentar .komen-box .komen-bawah input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  border-bottom: 1px solid var(--cream);
+  width: calc(100% - 26px);
+  padding: 2px 0;
+}
+.Komentar .komen-box .komen-bawah input::-moz-placeholder {
+  color: var(--cream);
+}
+.Komentar .komen-box .komen-bawah input:-ms-input-placeholder {
+  color: var(--cream);
+}
+.Komentar .komen-box .komen-bawah input::placeholder {
+  color: var(--cream);
+}
+.Komentar .komen-box .komen-bawah button.kirim-kartu {
+  color: gray;
+  width: 100%;
+  padding: 2px 0;
+  margin-top: 2px;
+  cursor: not-allowed;
+}
+.Komentar .komen-box .komen-bawah button.kirim-kartu.active {
+  cursor: pointer;
+  background-color: #9c6c86;
+  color: white;
+}
+.Komentar .komen-box .komen-bawah button.kirim-kartu.active:hover {
+  background-color: #ff00ff;
+}
+.Komentar .komen-box .komen-tengah {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+}
+.Komentar .komen-box .komen-tengah .untai {
+  position: relative;
+  color: #cecece;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  border-bottom: 1px solid var(--rosequartz);
+}
+.Komentar .komen-box .komen-tengah .untai .nick {
+  color: var(--rosequartz);
+}
+.Komentar .komen-box .komen-tengah .untai .hapus-element {
+  color: var(--burgundy);
+  font-size: 12px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+.Komentar .komen-box .kolom-kartu {
+  top: 50px;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  overflow-y: auto;
+}
+.Komentar .komen-box .kolom-kartu .kartu {
+  min-height: 100px;
+  max-height: 300px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  border: 4px solid transparent;
+  background-size: cover;
+  background-position: center;
+}
+.Komentar .komen-box .kolom-kartu .kartu h3, .Komentar .komen-box .kolom-kartu .kartu p {
+  color: white;
+  text-shadow: 1px 1px 3px black, -1px -1px 3px black;
+}
+.Komentar .komen-box .kolom-kartu .kartu.activated {
+  border: 4px solid var(--burgundydark);
+  box-shadow: inset 0 0 15px white, 0 0 10px white;
+}

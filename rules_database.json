@@ -1,0 +1,57 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "rabmaGutrak": {
+      ".read": true,
+      "$kartu": {
+        ".write": "newData.child('owner').val() == auth.uid || data.child('owner').val() == auth.uid",
+        ".validate": "newData.hasChildren(['judul', 'tanda', 'ucapan', 'warna', 'foto', 'path', 'owner']) || data.hasChildren(['judul', 'tanda', 'ucapan', 'warna', 'foto', 'path', 'owner'])",
+        "akus": {
+          "$uid": {
+            ".write": "auth.uid == $uid",
+            ".validate": "newData.hasChild('liked') || data.hasChild('liked')",
+            "liked": { ".validate": true },
+            "$lain": { ".validate": false }
+          }
+        },
+        "ratnemok": {
+          "$komentar": {
+            ".write": "newData.child('nama').val() == auth.uid || data.child('nama').val() == auth.uid",
+            "nama": { ".validate": true },
+            "pesan": { ".validate": "newData.val().length < 300" },
+            "$lain": { ".validate": false }
+          }
+        },
+        "judul": { ".validate": "newData.val().length < 20 || data.val().length < 20" },
+        "tanda": { ".validate": "newData.val().length < 20 || data.val().length < 20" },
+        "ucapan": { ".validate": "newData.val().length < 501 || data.val().length < 501" },
+        "warna": { ".validate": true },
+        "foto": { ".validate": true },
+        "path": { ".validate": true },
+        "owner": { ".validate": "newData.val() == auth.uid || data.val() == auth.uid" },
+        "pamerin": { ".validate": true },
+        "$lain": { ".validate": false }
+      }
+    },
+    "sresUtrak": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        "$kartu": {
+          ".write": "auth.uid == $uid",
+          "exist": { ".validate": true },
+          "$lain": { ".validate": false }
+        }
+      }
+    },
+    "sresu": {
+      "$uid": {
+        ".read": "auth.uid != null",
+        ".write": "auth.uid == $uid",
+        "username": { ".validate": "newData.val().length < 20 || data.val().length < 20" },
+        "displayName": { ".validate": "newData.val().length < 20 || data.val().length < 20" },
+        "$lain": { ".validate": false }
+      }
+    }
+  }
+}

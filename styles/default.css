@@ -1,0 +1,52 @@
+@import url("https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css");
+@font-face {
+  font-family: "Dosis";
+  src: url(../fonts/Dosis.ttf);
+}
+* {
+  font-family: "Dosis";
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+input, textarea, select {
+  outline: none;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  overflow: hidden;
+}
+
+::-moz-selection {
+  background: #75488a;
+  color: #ffffff;
+}
+
+::selection {
+  background: #75488a;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #75488a;
+  color: #ffffff;
+}

@@ -1,0 +1,243 @@
+:root {
+  --burgundy: #FFA3B8;
+  --rosequartz: #F7D6D0;
+  --fuchsia: #FC3C80;
+  --burgundydark: #821D30;
+  --cream: #F3EAC0;
+  --hitam: #1b1b1b;
+  --putih: #eeeeee;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis";
+}
+
+.Dashboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--rosequartz);
+  color: #1b1b1b;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: var(--burgundydark);
+}
+.header .judul {
+  color: var(--putih);
+}
+.header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 1px solid var(--burgundy);
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 5px 7px;
+  color: var(--putih);
+  font-weight: bold;
+}
+.header button img {
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.header button i {
+  margin-left: 5px;
+  font-size: 12px;
+}
+.header button span {
+  margin-bottom: 2px;
+}
+.header select {
+  padding: 5px 7px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid var(--burgundy);
+  background-color: var(--burgundydark);
+  color: var(--putih);
+  font-weight: bold;
+}
+.header select option {
+  background-color: #821D30;
+  color: white;
+}
+.header select option:hover {
+  background-color: black;
+  color: black;
+}
+.header select option:checked {
+  background-color: pink;
+  color: black;
+}
+
+.main {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #dedede;
+}
+.main .jumlah-kartu {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .list-kartu {
+  padding: 0 10px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  height: calc(100% - 80px);
+}
+.main .list-kartu .kartu {
+  background-color: #68484e;
+  background: linear-gradient(90deg, #68484e, #ac607a);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100px;
+  color: var(--hitam);
+  border: 1px solid var(--hitam);
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  transition: 0.2s;
+}
+.main .list-kartu .kartu h3, .main .list-kartu .kartu p {
+  text-shadow: 1px 1px 3px black, -1px -1px 3px black;
+  color: white;
+}
+.main .list-kartu .kartu:hover {
+  background-position: top;
+}
+.main .tombolan {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.main .tombolan button {
+  padding: 3px 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--fuchsia);
+  color: var(--cream);
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.Hasil {
+  background-color: var(--burgundy);
+  border: 2px solid var(--burgundydark);
+  background-size: cover;
+  border-radius: 10px;
+  padding: 15px;
+  width: calc(90% - 30px);
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+.Hasil .deskripsi {
+  color: var(--burgundydark);
+  margin-bottom: 15px;
+}
+.Hasil input {
+  padding: 3px 5px;
+  outline: none;
+  width: calc(100% - 20px);
+  background-color: var(--burgundydark);
+  color: var(--cream);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+}
+.Hasil input::-moz-placeholder {
+  color: var(--putih);
+}
+.Hasil input:-ms-input-placeholder {
+  color: var(--putih);
+}
+.Hasil input::placeholder {
+  color: var(--putih);
+}
+.Hasil input:hover, .Hasil input:focus {
+  border-color: var(--burgundydark);
+  background-color: var(--fuchsia);
+  color: var(--putih);
+}
+.Hasil .tombolan {
+  position: relative;
+  width: calc(100% - 10px);
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.Hasil .tombolan .delete, .Hasil .tombolan .copy {
+  font-size: 12px;
+  width: calc(50% - 3px);
+  padding: 4px 6px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--burgundydark);
+  color: var(--cream);
+}
+.Hasil a {
+  display: flex;
+  color: var(--burgundydark);
+  text-decoration: none;
+  font-weight: bold;
+}
+.Hasil a span {
+  text-decoration: underline;
+}
+.Hasil a i {
+  margin-left: 3px;
+  font-size: 10px;
+}
+.Hasil .close {
+  color: var(--burgundydark);
+  background: none;
+  border: none;
+  font-size: 45px;
+}
+
+@media (max-width: 850px) {
+  .main .list-kartu {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .main .list-kartu {
+    grid-template-columns: 1fr 1fr;
+  }
+}
