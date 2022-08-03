@@ -16,7 +16,7 @@
     }
 
     const getData = (link) => {
-        rdb.ref(`rabmaGutrak/${link}`).once("value", (data) => {
+        rdb.ref(`kartuGambar/${link}`).once("value", (data) => {
             
             try {
                 const snap = data.val();

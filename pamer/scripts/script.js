@@ -67,7 +67,7 @@
 
     const getKirimData = (parent, kirim, grand, wall, user) => {
         parent.innerHTML = '';
-        rdb.ref(`rabmaGutrak`).once("value", (cards) => {
+        rdb.ref(`kartuGambar`).once("value", (cards) => {
             if(cards.exists()) {
                 cards.forEach((data) => {
                     const snap = data.val();
@@ -93,7 +93,7 @@
             }
         });
 
-        rdb.ref(`sresUtrak`).child(auth.currentUser.uid).once("value", (cards) => {
+        rdb.ref(`kartuUser`).child(auth.currentUser.uid).once("value", (cards) => {
             if(!cards.exists()) {
                 grand.querySelector(`[data-kartu="author"]`).innerHTML = lang.haveNoCard;
             }
@@ -106,7 +106,7 @@
         kirim.onclick = () => {
             if(kartuTerpilih != null) {
                 kirim.classList.remove("active");
-                rdb.ref(`rabmaGutrak`).child(kartuTerpilih).update({"pamerin": "publik"});
+                rdb.ref(`kartuGambar`).child(kartuTerpilih).update({"pamerin": "publik"});
                 kartuTerpilih = null;
                 grand.remove();
                 getCard(wall, user);
@@ -116,7 +116,7 @@
 
     const getCard = (parent, user) => {
         parent.innerHTML = '';
-        rdb.ref("rabmaGutrak").once("value" , (cards) => {
+        rdb.ref("kartuGambar").once("value" , (cards) => {
             if(cards.exists()) {
                 cards.forEach((card) => {
                     let kartu = document.createElement("div");
@@ -164,18 +164,18 @@
     }
 
     const sukai = (user, card, suka, komentar) => {
-        rdb.ref("rabmaGutrak/" + card.key + "/akus/" + user.uid).once("value", (data) => {
+        rdb.ref("kartuGambar/" + card.key + "/suka/" + user.uid).once("value", (data) => {
             if(data.exists()) {
-                rdb.ref("rabmaGutrak/" + card.key + "/akus").child(user.uid).remove();
+                rdb.ref("kartuGambar/" + card.key + "/suka").child(user.uid).remove();
             } else {
-                rdb.ref("rabmaGutrak/" + card.key + "/akus").child(user.uid).update({liked: true});
+                rdb.ref("kartuGambar/" + card.key + "/suka").child(user.uid).update({liked: true});
             }
             getCardStatus(user, card, suka, komentar);
         })
     }
 
     const getCardData = (wall, user, card, kreator, tombol, komentar) => {
-        rdb.ref("sresu").child(card.val().owner).once("value", (data) => {
+        rdb.ref("users").child(card.val().owner).once("value", (data) => {
             let nickname = data.val().username || data.val().displayName;
             kreator.innerText = `Created by ${nickname}` || "Anonymous Card";
             komentar.onclick = () => openComments(user, nickname, komentar, card);
@@ -188,7 +188,7 @@
                 msg: lang.deletePost,
                 type: "danger",
                 onYes: () => {
-                    rdb.ref("rabmaGutrak/" + card.key).update({pamerin: "private"});
+                    rdb.ref("kartuGambar/" + card.key).update({pamerin: "private"});
                     getCard(wall, user)
                 }
             })
@@ -197,10 +197,10 @@
     }
 
     const getCardStatus = (user, card, suka, komentar) => {
-        rdb.ref("rabmaGutrak/" + card.key + "/akus").once("value", (accounts) => {
+        rdb.ref("kartuGambar/" + card.key + "/suka").once("value", (accounts) => {
             if(accounts.exists()) {
 
-                rdb.ref("rabmaGutrak/" + card.key + "/akus/" + user.uid).once("value", (data) => {
+                rdb.ref("kartuGambar/" + card.key + "/suka/" + user.uid).once("value", (data) => {
                     if(data.exists()) {
                         suka.innerHTML = `<i class="fa-solid fa-heart"></i> ${accounts.numChildren()} ${lang.like}`;
                     } else {
@@ -212,7 +212,7 @@
                 suka.innerHTML = `<i class="fa-regular fa-heart"></i> 0 ${lang.like}`;
             }
         });
-        rdb.ref("rabmaGutrak/" + card.key + "/ratnemok").once("value", (accounts) => {
+        rdb.ref("kartuGambar/" + card.key + "/komentar").once("value", (accounts) => {
             if(accounts.exists()) {
                 komentar.innerHTML = `<i class="fa-regular fa-comment"></i> ${accounts.numChildren()} ${lang.comment}`;
             } else {
@@ -267,7 +267,7 @@
         }
         kirim.onclick = () => {
             if(input.value.length < 1) return;
-            rdb.ref("rabmaGutrak/" + key + "/ratnemok").child(new Date().getTime()).set({
+            rdb.ref("kartuGambar/" + key + "/komentar").child(new Date().getTime()).set({
                 nama: user.uid,
                 pesan: input.value,
             });
@@ -277,7 +277,7 @@
     }
 
     const getComments = (komen, key) => {
-        rdb.ref("rabmaGutrak/" + key + "/ratnemok").once("value", (comments) => {
+        rdb.ref("kartuGambar/" + key + "/komentar").once("value", (comments) => {
             komen.innerHTML = '';
             if(comments.exists()) {
                 comments.forEach((comment) => {
@@ -298,7 +298,7 @@
                             msg: lang.deleteComment,
                             type: "danger",
                             onYes: () => {
-                                rdb.ref("rabmaGutrak/" + key + "/ratnemok/" + comment.key).remove();
+                                rdb.ref("kartuGambar/" + key + "/komentar/" + comment.key).remove();
                                 getComments(komen, key);
                             }
                         })
@@ -311,7 +311,7 @@
             }
         });
         const getCommenterNickname = (uid, untai) => {
-            rdb.ref("sresu").child(uid).once("value", (data) => {
+            rdb.ref("users").child(uid).once("value", (data) => {
                 let nickname = data.val().username || data.val().displayName;
                 untai.innerText = nickname;
             });

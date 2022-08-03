@@ -264,8 +264,8 @@
 
         container.appendChild(uploading);
 
-        const now = new Date().getTime().toString().replace(/1/g, "x").replace(/2/g, "c").replace(/3/g, "f").replace(/4/g, "g").replace(/5/g, "i").replace(/6/g, "k").replace(/7/g, "n").replace(/8/g, "q").replace(/9/g, "t").replace(/0/g, "a").replace(/10/g, "z");
-        const path = `rabmaGutrak/${auth.currentUser.uid}/${now}_${file.name}`;
+        const now = new Date().getTime().toString();
+        const path = `kartuGambar/${auth.currentUser.uid}/${now}_${file.name}`;
         const cardRef = stg.ref(path);
         const cardUp = cardRef.put(file);
         const owner = auth.currentUser.uid;
@@ -277,10 +277,10 @@
             return Notipin.Alert({msg: err, type: "danger"})
         }, () => {
             cardUp.snapshot.ref.getDownloadURL().then(foto => {
-                rdb.ref("rabmaGutrak").child(now).set({
+                rdb.ref("kartuGambar").child(now).set({
                     judul, tanda, ucapan, warna, path, foto, owner
                 });
-                rdb.ref(`sresUtrak/${auth.currentUser.uid}`).child(now).set({
+                rdb.ref(`kartuUser/${auth.currentUser.uid}`).child(now).set({
                     exist: true
                 });
                 uploading.remove();

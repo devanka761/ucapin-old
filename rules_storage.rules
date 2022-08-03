@@ -1,7 +1,7 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    match /rabmaGutrak/{user_id}/{picture_id} {
+    match /kartuGambar/{user_id}/{picture_id} {
       allow read: if true;
       allow write: if request.auth.uid == user_id && request.resource.size < 3 * 1024 * 1024;
       allow delete: if request.auth.uid == user_id;

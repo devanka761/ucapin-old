@@ -2,12 +2,12 @@
   "rules": {
     ".read": false,
     ".write": false,
-    "rabmaGutrak": {
+    "kartuGambar": {
       ".read": true,
       "$kartu": {
         ".write": "newData.child('owner').val() == auth.uid || data.child('owner').val() == auth.uid",
         ".validate": "newData.hasChildren(['judul', 'tanda', 'ucapan', 'warna', 'foto', 'path', 'owner']) || data.hasChildren(['judul', 'tanda', 'ucapan', 'warna', 'foto', 'path', 'owner'])",
-        "akus": {
+        "suka": {
           "$uid": {
             ".write": "auth.uid == $uid",
             ".validate": "newData.hasChild('liked') || data.hasChild('liked')",
@@ -15,7 +15,7 @@
             "$lain": { ".validate": false }
           }
         },
-        "ratnemok": {
+        "komentar": {
           "$komentar": {
             ".write": "newData.child('nama').val() == auth.uid || data.child('nama').val() == auth.uid",
             "nama": { ".validate": true },
@@ -34,7 +34,7 @@
         "$lain": { ".validate": false }
       }
     },
-    "sresUtrak": {
+    "kartuUser": {
       "$uid": {
         ".read": "auth.uid == $uid",
         "$kartu": {
@@ -44,7 +44,7 @@
         }
       }
     },
-    "sresu": {
+    "users": {
       "$uid": {
         ".read": "auth.uid != null",
         ".write": "auth.uid == $uid",

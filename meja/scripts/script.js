@@ -84,7 +84,7 @@
             changename.onclick = () => {
                 if(username.value.length < 1) return cardEl.remove();
                 if(username.value.length < 4) return Notipin.Alert({msg: lang.changeuname});
-                rdb.ref('sresu').child(user.uid).update({username: username.value});
+                rdb.ref('users').child(user.uid).update({username: username.value});
                 Dashboard(user, username.value, photo);
             }
             cardEl.querySelector(`[data-button="logout"]`).onclick = () => Notipin.Confirm({
@@ -106,7 +106,7 @@
 
     const getData = (parent, jumlah, user, dpname, photo) => {
         let lang = Bahasa[bahasa].dashboard;
-        rdb.ref(`rabmaGutrak`).once("value", (cards) => {
+        rdb.ref(`kartuGambar`).once("value", (cards) => {
             if(cards.exists()) {
                 cards.forEach((data) => {
                     const snap = data.val();
@@ -125,7 +125,7 @@
                 });
             }
         })
-        rdb.ref(`sresUtrak`).child(auth.currentUser.uid).once("value", (cards) => {
+        rdb.ref(`kartuUser`).child(auth.currentUser.uid).once("value", (cards) => {
             if(cards.exists()) {
                 jumlah.innerHTML = `${lang.ifHave} <b>${cards.numChildren()} ${lang.ifHaveEnd}</b>`;
             } else {
@@ -165,8 +165,8 @@
             type: "danger",
             onYes: () => {
                 stg.ref(path).delete().then(() => {
-                    rdb.ref(`rabmaGutrak/${key}`).remove();
-                    rdb.ref(`sresUtrak/${auth.currentUser.uid}/${key}`).remove();
+                    rdb.ref(`kartuGambar/${key}`).remove();
+                    rdb.ref(`kartuUser/${auth.currentUser.uid}/${key}`).remove();
                     cardEl.remove();
                     Dashboard(user, dpname, photo);
                     Notipin.Alert({
@@ -194,8 +194,8 @@
 
     auth.onAuthStateChanged((user) => {
         if(user) {
-            rdb.ref("sresu").child(user.uid).update({displayName: user.displayName || `User${new Date().getTime()}`});
-            rdb.ref("sresu").child(user.uid).once("value", (data) => {
+            rdb.ref("users").child(user.uid).update({displayName: user.displayName || `User${new Date().getTime()}`});
+            rdb.ref("users").child(user.uid).once("value", (data) => {
                 let nickname = data.val().username || data.val().displayName || `User${new Date().getTime()}`;
                 Dashboard(user, nickname, user.photoURL || "../images/default.jpg");
             })
