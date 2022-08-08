@@ -76,6 +76,16 @@ body {
   margin: 10px 0;
 }
 
+.main .box a:hover {
+color: #53000e;
+background-color: pink;
+}
+
+.main .box a:active {
+transform: scale(0.9);
+}
+      
+
 .footer {
   position: absolute;
   right: 0;

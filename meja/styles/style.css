@@ -127,6 +127,8 @@ button:active {
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
   transition: 0.2s;
+  -webkit-animation: kartuMuncul 1s;
+          animation: kartuMuncul 1s;
 }
 .main .list-kartu .kartu h3, .main .list-kartu .kartu p {
   text-shadow: 1px 1px 3px black, -1px -1px 3px black;
@@ -150,6 +152,8 @@ button:active {
   color: var(--cream);
   font-size: 16px;
   transition: 0.2s;
+  -webkit-animation: tombolMuncul 1.5s;
+          animation: tombolMuncul 1.5s;
 }
 
 .Hasil {
@@ -165,6 +169,8 @@ button:active {
   align-items: center;
   justify-content: center;
   z-index: 9;
+  -webkit-animation: hasilMuncul 0.2s;
+          animation: hasilMuncul 0.2s;
 }
 .Hasil .deskripsi {
   color: var(--burgundydark);
@@ -239,5 +245,61 @@ button:active {
 @media (max-width: 600px) {
   .main .list-kartu {
     grid-template-columns: 1fr 1fr;
+  }
+}
+@-webkit-keyframes kartuMuncul {
+  from {
+    opacity: 0.75;
+    transform: scale(0.75) translate(0, 50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kartuMuncul {
+  from {
+    opacity: 0.75;
+    transform: scale(0.75) translate(0, 50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+}
+@-webkit-keyframes tombolMuncul {
+  from {
+    transform: translate(0, 100px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes tombolMuncul {
+  from {
+    transform: translate(0, 100px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes hasilMuncul {
+  from {
+    opacity: 0.5;
+    transform: scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes hasilMuncul {
+  from {
+    opacity: 0.5;
+    transform: scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

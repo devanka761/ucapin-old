@@ -98,28 +98,6 @@ button:active {
   display: none;
 }
 
-.footer {
-  font-size: 12px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 30px;
-  background-color: var(--burgundydark);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.footer a {
-  color: var(--cream);
-  margin-left: 3px;
-}
-.footer i {
-  margin: 0 5px;
-  color: var(--burgundy);
-}
-
 .main {
   position: absolute;
   top: 50px;
@@ -156,6 +134,7 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 .main .form label {
@@ -165,6 +144,8 @@ button:active {
 .main .form input, .main .form textarea {
   outline: none;
   border: none;
+  -webkit-animation: inputMuncul 1s;
+          animation: inputMuncul 1s;
 }
 .main .form input {
   background-color: var(--burgundydark);
@@ -211,6 +192,8 @@ button:active {
   color: var(--cream);
   border: none;
   border-radius: 5px;
+  -webkit-animation: tombolMuncul 0.75s;
+          animation: tombolMuncul 0.75s;
 }
 .main .form .pilih-gambar i {
   font-size: 20px;
@@ -227,6 +210,8 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-animation: tombolMuncul 1.5s;
+          animation: tombolMuncul 1.5s;
 }
 .main .form .pilih-warna input {
   width: 20px;
@@ -264,6 +249,8 @@ button:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  -webkit-animation: hasilMuncul 0.5s;
+          animation: hasilMuncul 0.5s;
 }
 .Hasil .deskripsi {
   color: var(--burgundydark);
@@ -319,4 +306,54 @@ button:active {
   background: none;
   border: none;
   font-size: 45px;
+}
+
+@-webkit-keyframes inputMuncul {
+  from {
+    transform: scale(0) rotate(45deg);
+  }
+  to {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes inputMuncul {
+  from {
+    transform: scale(0) rotate(45deg);
+  }
+  to {
+    transform: scale(1) rotate(0);
+  }
+}
+@-webkit-keyframes tombolMuncul {
+  from {
+    transform: translate(100px, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes tombolMuncul {
+  from {
+    transform: translate(100px, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes hasilMuncul {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+@keyframes hasilMuncul {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(0);
+  }
 }

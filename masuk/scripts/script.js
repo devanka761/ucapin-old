@@ -3,7 +3,7 @@ const container = document.querySelector(".container");
     const Landing = () => {
         const lang = Bahasa[bahasa].landing;
     
-        const element = document.createElement("div");
+        const element = document.createElement("main");
         element.classList.add("Landing");
         element.innerHTML = (`
             <h1 class="judul">UCAPIN</h1>

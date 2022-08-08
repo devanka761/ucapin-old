@@ -6,7 +6,7 @@
         const element = document.createElement("div");
         element.classList.add("Pamer");
         element.innerHTML = (`
-            <div class="header">
+            <header class="header">
                 <button data-button="kembali-pamer">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
@@ -14,10 +14,10 @@
                 <button data-button="bikin-pamerin">
                     <i class="fa-solid fa-plus"></i>
                 </button>
-            </div>
-            <div class="main" data-content="list-kartu">
+            </header>
+            <main class="main" data-content="list-kartu">
                 LOADING . . .
-            </div>
+            </main>
             <button class="bikin-btn" data-button="buat-pamerin"><i class="fa-solid fa-plus"></i> ${lang.create}</button>
         `);
 

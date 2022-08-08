@@ -17,13 +17,13 @@
         const element = document.createElement("div");
         element.classList.add("Bikin");
         element.innerHTML = (`
-        <div class="header">
+        <header class="header">
             <button data-button="kembali-bikin">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
             <h3 class="judul">${lang.act} | Ucapin</h3>
-        </div>
-        <div class="main">
+        </header>
+        <main class="main">
             <div class="form">
                 
                 <label for="judul">${lang.subject}</label>
@@ -56,7 +56,7 @@
                     <i class="fa-duotone fa-circle-check"></i> SUBMIT
                 </button>
             </div>
-        </div>
+        </main>
         `);
 
         const kembali = element.querySelector("[data-button='kembali-bikin']");

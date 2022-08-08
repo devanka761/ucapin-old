@@ -6,7 +6,7 @@
         const element = document.createElement("div");
         element.classList.add("Dashboard");
         element.innerHTML = (`
-            <div class="header">
+            <header class="header">
                 <h1 class="judul">UCAPIN</h1>
                 <select name="bahasa" data-option="bahasa">
                     <option value="">Lang</option>
@@ -18,8 +18,8 @@
                 <span class="username">loading</span>
                     <i class="fa-light fa-gear"></i>
                 </button>
-            </div>
-            <div class="main">
+            </header>
+            <main class="main">
                 <div class="jumlah-kartu">
                     <span><b>- Loading -</b></span>
                     </div>
@@ -28,7 +28,7 @@
                     <button data-button="bagikan-kartu"><i class="fa-solid fa-rectangle-vertical-history"></i> ${lang.post}</button>
                     <button data-button="buat-kartu"><i class="fa-solid fa-book-sparkles"></i> ${lang.createNew}</button>
                 </div>
-            </div>
+            </main>
         `);
         container.innerHTML = "";
         
