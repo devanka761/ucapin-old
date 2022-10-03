@@ -1,6 +1,6 @@
 # UCAPIN
 Demo: <br>
-[UCAPIN - Show to your loved ones!](https://ucapin.devanka.my.id)
+[UCAPIN - Show to your loved ones!](https://ucapin.devanka761.my.id/)
 ## Instalasi Singkat:
 > 1. Buat Project di Firebase
 > 2. Nyalakan Authentication
